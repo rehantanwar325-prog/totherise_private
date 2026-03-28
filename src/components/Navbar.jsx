@@ -22,8 +22,8 @@ export default function Navbar() {
   return (
     <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="nav__inner">
-        <a href="#home" className="nav__logo">
-          <svg className="nav__logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a href="#home" className="nav__logo" aria-label="Totherise Home">
+          <svg className="nav__logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#navGrad)" />
             <path d="M10 22V12h3v10h-3zM14 22V9h3v13h-3zM18 22V14h3v8h-3zM22 22V11h3v11h-3z" fill="white" opacity="0.95"/>
             <defs><linearGradient id="navGrad" x1="2" y1="2" x2="30" y2="30"><stop stopColor="#7c3aed"/><stop offset="1" stopColor="#a855f7"/></linearGradient></defs>
@@ -63,7 +63,8 @@ export default function Navbar() {
         <button
           className={`nav__burger ${menuOpen ? 'nav__burger--open' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
         >
           <span /><span /><span />
         </button>
